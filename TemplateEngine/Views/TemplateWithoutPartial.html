@@ -1,0 +1,23 @@
+﻿<html>
+<head>
+</head>
+<body>
+Hi {{UserName}},
+<br/><br/>
+{{ if SiteNames.size == 1 }}
+    <p>
+        Site <b>{{ SiteNames | array.first }}</b> is attached to this email.
+    </p>
+{{ else }}
+    <p>
+        Sites <b>{{ SiteNames | array.join ", "}}</b> are attached to this email.
+    </p>
+{{ end }}
+<p>
+    Support team at <a href="mailto:{{SupportEmail}}">{{SupportEmail}}</a>.
+</p>
+
+Sincerely,<br/>
+The {{CompanyName}} Team
+</body>
+</html>
